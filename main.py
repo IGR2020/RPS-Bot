@@ -41,8 +41,8 @@ class Button(pg.Rect):
             pg.draw.rect(win, background, self)
         win.blit(self.image, self)
 
-window_width, window_height = 780, 800
-window = pg.display.set_mode((window_width, window_height))
+window = pg.display.set_mode()
+window_width, window_height = window.get_size()
 image_width = 250
 rock_image = load("Rock.png")
 rock_button = Button((0, window_height/2-image_width/2), rock_image)
