@@ -82,7 +82,7 @@ bot1.update_choice()
 bot2.update_choice()
 
 
-bot_game = False
+bot_game = True
 wins = 0
 win_rate = 0
 total_plays = 0
@@ -98,6 +98,13 @@ while run:
             if not bot_game:
                 file = open("data.json", "w")
                 json.dump(bot1.all_moves, file)
+                file.close()
+            else:
+                file = open("data bot1.json", "w")
+                json.dump(bot1.all_moves, file)
+                file.close()
+                file = open("data bot2.json", "w")
+                json.dump(bot2.all_moves, file)
                 file.close()
 
             run = False
